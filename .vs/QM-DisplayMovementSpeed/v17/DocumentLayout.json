@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\James\\Repositories\\Quasimorph\\QM-DisplayMovementSpeed\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{76F5A6F2-93DA-499D-8BC9-052B4F1E1BD0}|QM-DisplayMovementSpeed\\QM-DisplayMovementSpeed.csproj|c:\\users\\james\\repositories\\quasimorph\\qm-displaymovementspeed\\qm-displaymovementspeed\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76F5A6F2-93DA-499D-8BC9-052B4F1E1BD0}|QM-DisplayMovementSpeed\\QM-DisplayMovementSpeed.csproj|solutionrelative:qm-displaymovementspeed\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76F5A6F2-93DA-499D-8BC9-052B4F1E1BD0}|QM-DisplayMovementSpeed\\QM-DisplayMovementSpeed.csproj|C:\\Users\\James\\Repositories\\Quasimorph\\QM-DisplayMovementSpeed\\qm-displaymovementspeed\\tinyjson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76F5A6F2-93DA-499D-8BC9-052B4F1E1BD0}|QM-DisplayMovementSpeed\\QM-DisplayMovementSpeed.csproj|solutionrelative:qm-displaymovementspeed\\tinyjson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76F5A6F2-93DA-499D-8BC9-052B4F1E1BD0}|QM-DisplayMovementSpeed\\QM-DisplayMovementSpeed.csproj|C:\\Users\\James\\Repositories\\Quasimorph\\QM-DisplayMovementSpeed\\qm-displaymovementspeed\\hidetextmesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76F5A6F2-93DA-499D-8BC9-052B4F1E1BD0}|QM-DisplayMovementSpeed\\QM-DisplayMovementSpeed.csproj|solutionrelative:qm-displaymovementspeed\\hidetextmesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TInyJson.cs",
+              "DocumentMoniker": "C:\\Users\\James\\Repositories\\Quasimorph\\QM-DisplayMovementSpeed\\QM-DisplayMovementSpeed\\TInyJson.cs",
+              "RelativeDocumentMoniker": "QM-DisplayMovementSpeed\\TInyJson.cs",
+              "ToolTip": "C:\\Users\\James\\Repositories\\Quasimorph\\QM-DisplayMovementSpeed\\QM-DisplayMovementSpeed\\TInyJson.cs",
+              "RelativeToolTip": "QM-DisplayMovementSpeed\\TInyJson.cs",
+              "ViewState": "AQIAAFABAAAAAAAAAAAmwHgBAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T00:59:12.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HideTextMesh.cs",
+              "DocumentMoniker": "C:\\Users\\James\\Repositories\\Quasimorph\\QM-DisplayMovementSpeed\\QM-DisplayMovementSpeed\\HideTextMesh.cs",
+              "RelativeDocumentMoniker": "QM-DisplayMovementSpeed\\HideTextMesh.cs",
+              "ToolTip": "C:\\Users\\James\\Repositories\\Quasimorph\\QM-DisplayMovementSpeed\\QM-DisplayMovementSpeed\\HideTextMesh.cs",
+              "RelativeToolTip": "QM-DisplayMovementSpeed\\HideTextMesh.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T20:19:43.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Plugin.cs",
+              "DocumentMoniker": "C:\\Users\\James\\Repositories\\Quasimorph\\QM-DisplayMovementSpeed\\QM-DisplayMovementSpeed\\Plugin.cs",
+              "RelativeDocumentMoniker": "QM-DisplayMovementSpeed\\Plugin.cs",
+              "ToolTip": "C:\\Users\\James\\Repositories\\Quasimorph\\QM-DisplayMovementSpeed\\QM-DisplayMovementSpeed\\Plugin.cs",
+              "RelativeToolTip": "QM-DisplayMovementSpeed\\Plugin.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAowEwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T23:31:52.907Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
