@@ -14,7 +14,6 @@ namespace QM_DisplayMovementSpeed
     {
         public static KeyCode toggleKey = KeyCode.Comma;
         public static bool show = true;
-        public static List<Monster> monsters = new List<Monster>();
         [Hook(ModHookType.AfterBootstrap)]
         public static void Bootstrap(IModContext context)
         {
@@ -71,7 +70,6 @@ namespace QM_DisplayMovementSpeed
 
         public static void createText(Monster __instance)
         {
-            Plugin.monsters.Add(__instance);
             GameObject monsterGameObject = __instance.CreatureView.gameObject;
             GameObject textGameObject = new GameObject("movementSpeedText");
 
