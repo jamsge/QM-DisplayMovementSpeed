@@ -17,7 +17,6 @@ namespace QM_DisplayMovementSpeed
         public Monster monster;
         void Start()
         {
-            Debug.Log("creating hidetextmesh component");
             SpriteRenderer[] spriteRenderers = gameObject.GetComponentsInChildren<SpriteRenderer>();
             foreach(SpriteRenderer s in spriteRenderers)
             {
@@ -38,6 +37,9 @@ namespace QM_DisplayMovementSpeed
 
         void FixedUpdate ()
         {
+            
+            if (textMesh.renderer == null) return;
+
             if (Plugin.show)
                 textMesh.renderer.enabled = spriteRenderer.enabled;
             else

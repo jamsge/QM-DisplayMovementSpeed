@@ -1,7 +1,9 @@
 # Display enemy movement speed
 
 For the people constantly right clicking on enemies to not get owned by 3AP melee goons. 
-Shows the amount of action points an enemy can spend. Toggleable with the comma key, rebindable with a config file.
+Shows the amount of action points an enemy can spend. If the enemy is melee only, an 'M' will also be displayed.
+
+Toggleable with the comma key, rebindable with a config file.
 
 Not tested extensively yet, use at your own risk
 
