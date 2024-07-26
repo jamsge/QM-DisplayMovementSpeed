@@ -8,18 +8,18 @@ using System.IO;
 using System;
 
 using TinyJson;
+using System.Linq;
 namespace QM_DisplayMovementSpeed
 {
     public class Plugin
     {
+        public const string MoveSpeedTextId = "movementSpeedText";
         public static KeyCode toggleKey = KeyCode.Comma;
         public static bool show = true;
         [Hook(ModHookType.AfterBootstrap)]
         public static void Bootstrap(IModContext context)
         {
-
             string configPath = Path.Combine(Application.persistentDataPath, Assembly.GetExecutingAssembly().GetName().Name) + ".json";
-            Debug.Log(configPath);
 
             // thanks NBK_redspy, i just looked at your code because i had no idea how to do this
             if (File.Exists(configPath))
@@ -29,6 +29,9 @@ namespace QM_DisplayMovementSpeed
                     string fileJson = File.ReadAllText(configPath);
                     Dictionary<string, string> values = fileJson.FromJson<Dictionary<string, string>>();
                     toggleKey = (KeyCode)Enum.Parse(typeof(KeyCode), values["toggleKey"]);
+
+                    string value = "";
+
                 }
                 catch (Exception ex)
                 {
@@ -71,7 +74,7 @@ namespace QM_DisplayMovementSpeed
         public static void createText(Monster __instance)
         {
             GameObject monsterGameObject = __instance.CreatureView.gameObject;
-            GameObject textGameObject = new GameObject("movementSpeedText");
+            GameObject textGameObject = new GameObject(MoveSpeedTextId);
 
             textGameObject.transform.SetParent(monsterGameObject.transform);
             textGameObject.transform.localPosition = new Vector3(0.1f, 0.1f, 0);
@@ -79,7 +82,8 @@ namespace QM_DisplayMovementSpeed
             textGameObject.AddComponent(typeof(TextMeshPro));
 
             TextMeshPro text = textGameObject.GetComponent<TextMeshPro>();
-            text.text = (__instance.ActionPointsLeft + __instance.ActionPointsProcessed) + "";
+
+            text.text = GetLabelText(__instance);
             text.fontSize = 1f;
             text.fontStyle = FontStyles.Bold;
             text.lineSpacing = 1;
@@ -88,12 +92,70 @@ namespace QM_DisplayMovementSpeed
             text.outlineColor = Color.black;
             text.outlineWidth = 0.3f;
 
-
             HideTextMesh hider = __instance.gameObject.AddComponent<HideTextMesh>();
             hider.monster = __instance;
         }
 
+        public static void UpdateText(Monster __instance)
+        {
+            //After taking damage, update the label in case the enemy lost their weapon due to amputation.
+            Component moveComponent = __instance.CreatureView.gameObject.GetComponentsInChildren(typeof(TMPro.TextMeshPro))
+                .ToList()
+                .SingleOrDefault(x => x.name == Plugin.MoveSpeedTextId);
+
+            TextMeshPro label = moveComponent?.GetComponent<TextMeshPro>();
+
+            if (label != null)
+            {
+                label.text = Plugin.GetLabelText(__instance);
+            }
+        }
+        public static string GetLabelText(Monster monster)
+        {
+            Inventory inventory = monster?.Inventory;
+
+
+            bool hasRanged = false;
+
+            List<string> weaponsList = new List<string>();
+
+            if (inventory != null)
+            {
+                WeaponRecord weaponRecord;
+
+                //Assuming that if one ranged weapon is found, it's ranged.
+                //Ignoring turrets since they will never be melee.
+
+                hasRanged = inventory.WeaponSlots
+                    .Any(x => x.Items
+                        .Any(y => y?.Record<WeaponRecord>()?.IsMelee == false)
+                    );
+
+                    weaponsList = inventory.WeaponSlots
+                        .SelectMany(x => 
+                            x.Items
+                                .Select(y => y.Record<WeaponRecord>().Id)
+                                )
+                        .ToList();
+            }
+
+            return  $"{monster.ActionPointsLeft + monster.ActionPointsProcessed}{(hasRanged ? "" : "M")}";
+        }
+
     }
+
+
+    [HarmonyPatch(typeof(Monster), nameof(Monster.ProcessDamage))]
+    public static class Patch_ProcessDamage
+    {
+        public static void Postfix(Monster __instance)
+        {
+            Plugin.UpdateText(__instance);
+        }
+
+    }
+
+
 
     [HarmonyPatch(typeof(Monster), nameof(Monster.OnAfterLoad))]
     public static class Patch_OnMonsterLoad
@@ -121,4 +183,14 @@ namespace QM_DisplayMovementSpeed
             Plugin.createText(__instance);
         }
     }
+
+    [HarmonyPatch(typeof(Monster), nameof(Monster.CreatureViewOnVisualRefreshed))]
+    public static class Patch_CreatureViewOnVisualRefreshed
+    {
+        public static void Postfix(Monster __instance)
+        {
+            Plugin.UpdateText(__instance);
+        }
+    }
+
 }
