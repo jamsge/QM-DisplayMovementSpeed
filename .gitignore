@@ -3,6 +3,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+package/
+SteamTest/
 *.zip
 # User-specific files
 *.rsuser
@@ -362,5 +364,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-
-steam
+/SteamMod
+/package/QM_DisplayMovementSpeedContinued/QM_DisplayMovementSpeedContinued.dll

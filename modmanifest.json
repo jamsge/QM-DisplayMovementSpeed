@@ -1,0 +1,7 @@
+{
+  "UniqueModName": "NBKRedSpy_QM_DisplayMovement_Continued",
+  "Assemblies": [
+    "QM_DisplayMovementSpeedContinued.dll"
+  ],
+  "Dependencies": []
+}
