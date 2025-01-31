@@ -1,19 +1,33 @@
-# Display enemy movement speed
+# Display Enemy Movement Speed - Continued...
+![Melee and ranged text example](./media/thumbnail.png)
+
+# Functionality
 
 For the people constantly right clicking on enemies to not get owned by 3AP melee goons. 
 Shows the amount of action points an enemy can spend. If the enemy is melee only, an 'M' will also be displayed.
 
 Toggleable with the comma key, rebindable with a config file.
 
-Not tested extensively yet, use at your own risk
+# Continued Notes
+This is a continuation of GitHub user [jamsge's](https://github.com/jamsge) fantastic mod of the same name.
+If the original author comes back, this mod will be removed in favor of their mod listing.
+
+## **Important!**
+Make sure you are not subscribed to the original Display Enemy Movement Speed mod, or this mod will not work correctly.
+
+
 
 ## Config
 To rebind the comma key toggle, go to:
-`%UserProfile%\AppData\LocalLow\Magnum Scriptum Ltd\Quasimorph\QM-DisplayMovementSpeed.json`
+`%UserProfile%\AppData\LocalLow\Magnum Scriptum Ltd\Quasimorph_ModConfigs\QM_DisplayMovementSpeedContinued.json`
 and change "Comma" [with a Unity Keycode of your choice (scroll down to the Properties section)](https://docs.unity3d.com/ScriptReference/KeyCode.html).
 
+
 ## Source
-https://github.com/jamsge/QM-DisplayMovementSpeed
+https://github.com/NBKRedSpy/QM-DisplayMovementSpeedContinued
+
+## Credits
+["Continued" font created with textstudio.com](https://www.textstudio.com/)
 
 ## FAQ
 ***I ran into an bug, what do I do?***
@@ -25,6 +39,9 @@ I can't guarantee anything, but please feel free to leave a comment or forum pos
 *** I can't find the config file! What do I do? ***
 You need to run the game at least once for a config file to generate
 
-### Note: I'm still learning the ropes of creating these mods, so my apologies if they cause more inconveniences. If there are parts of my mods that are game-breaking and extra inconvenient, I will continue to pull my items from the workshop to make sure they are quality before release. I hope I can improve with your feedback and criticism to eventually create some really great mods that everyone can enjoy.
+# Change Log
+## 1.1.0
 
-## Updates
+* Created this continuation mod.
+* Quasimorph 0.8.5 compatibility.
+* Added "M" for melee.
